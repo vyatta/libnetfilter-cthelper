@@ -66,6 +66,7 @@
 
 struct nfct_helper {
 	char		name[NF_CT_HELPER_NAME_MAX];
+	uint32_t	priv_data_len;
 	uint32_t	queue_num;
 	uint32_t	policy_num;
 	struct {
@@ -151,6 +152,10 @@ nfct_helper_attr_set(struct nfct_helper *nfct_helper,
 	case NFCTH_ATTR_EXP_POLICY_MAX:
 		nfct_helper->expect_policy[0].expect_max = *((uint32_t *) data);
 		nfct_helper->bitset |= (1 << NFCTH_ATTR_EXP_POLICY_MAX);
+		break;
+	case NFCTH_ATTR_PRIV_DATA_LEN:
+		nfct_helper->priv_data_len = *((uint32_t *) data);
+		nfct_helper->bitset |= (1 << NFCTH_ATTR_PRIV_DATA_LEN);
 		break;
 	}
 }
@@ -402,6 +407,8 @@ void nfct_helper_nlmsg_build_payload(struct nlmsghdr *nlh,
 
 	mnl_attr_put_strz(nlh, NFCTH_NAME, nfct_helper->name);
 	mnl_attr_put_u32(nlh, NFCTH_QUEUE_NUM, htonl(nfct_helper->queue_num));
+	mnl_attr_put_u32(nlh, NFCTH_PRIV_DATA_LEN,
+				htonl(nfct_helper->priv_data_len));
 
 	nest = mnl_attr_nest_start(nlh, NFCTH_TUPLE);
 	mnl_attr_put_u16(nlh, NFCTH_TUPLE_L3PROTONUM, nfct_helper->tuple.l3num);

@@ -14,6 +14,7 @@ enum nfct_helper_attr_type {
 	NFCTH_ATTR_EXP_POLICY_NAME,
 	NFCTH_ATTR_EXP_POLICY_TIMEOUT,
 	NFCTH_ATTR_EXP_POLICY_MAX,
+	NFCTH_ATTR_PRIV_DATA_LEN,
 };
 
 struct nfct_helper *nfct_helper_alloc(void);

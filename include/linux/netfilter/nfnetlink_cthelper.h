@@ -14,6 +14,7 @@ enum nfnl_cthelper_type {
 	NFCTH_TUPLE,
 	NFCTH_QUEUE_NUM,
 	NFCTH_POLICY,
+	NFCTH_PRIV_DATA_LEN,
 	__NFCTH_MAX
 };
 #define NFCTH_MAX (__NFCTH_MAX - 1)
