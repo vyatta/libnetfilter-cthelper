@@ -1,6 +1,9 @@
 #ifndef _NFNL_CTHELPER_H_
 #define _NFNL_CTHELPER_H_
 
+#define NFCT_HELPER_STATUS_DISABLED	0
+#define NFCT_HELPER_STATUS_ENABLED	1
+
 enum nfnl_acct_msg_types {
 	NFNL_MSG_CTHELPER_NEW,
 	NFNL_MSG_CTHELPER_GET,
@@ -15,6 +18,7 @@ enum nfnl_cthelper_type {
 	NFCTH_QUEUE_NUM,
 	NFCTH_POLICY,
 	NFCTH_PRIV_DATA_LEN,
+	NFCTH_STATUS,
 	__NFCTH_MAX
 };
 #define NFCTH_MAX (__NFCTH_MAX - 1)
