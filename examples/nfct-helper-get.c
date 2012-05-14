@@ -21,7 +21,7 @@ static int nfct_helper_cb(const struct nlmsghdr *nlh, void *data)
 		goto err_free;
 	}
 
-	nfct_helper_snprintf(buf, sizeof(buf), nfct_helper, 0);
+	nfct_helper_snprintf(buf, sizeof(buf), nfct_helper, 0, 0);
 	printf("%s\n", buf);
 
 err_free:

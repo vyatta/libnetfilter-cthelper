@@ -13,6 +13,7 @@ int main(int argc, char *argv[])
 	struct nlmsghdr *nlh;
 	uint32_t portid, seq;
 	struct nfct_helper *nfct_helper;
+	struct nfct_helper_policy *p;
 	int ret;
 
 	if (argc != 3) {
@@ -28,11 +29,19 @@ int main(int argc, char *argv[])
 
 	nfct_helper_attr_set(nfct_helper, NFCTH_ATTR_NAME, argv[1]);
 	nfct_helper_attr_set_u32(nfct_helper, NFCTH_ATTR_QUEUE_NUM, atoi(argv[2]));
-	nfct_helper_attr_set(nfct_helper, NFCTH_ATTR_EXP_POLICY_NAME, "test");
 	nfct_helper_attr_set_u16(nfct_helper, NFCTH_ATTR_PROTO_L3NUM, AF_INET);
 	nfct_helper_attr_set_u8(nfct_helper, NFCTH_ATTR_PROTO_L4NUM, IPPROTO_TCP);
-	nfct_helper_attr_set_u32(nfct_helper, NFCTH_ATTR_EXP_POLICY_TIMEOUT, 100);
-	nfct_helper_attr_set_u32(nfct_helper, NFCTH_ATTR_EXP_POLICY_MAX, 100);
+
+	p = nfct_helper_policy_alloc();
+	if (p == NULL) {
+		perror("OOM");
+		exit(EXIT_FAILURE);
+	}
+	nfct_helper_policy_attr_set(p, NFCTH_ATTR_POLICY_NAME, "test");
+	nfct_helper_policy_attr_set_u32(p, NFCTH_ATTR_POLICY_TIMEOUT, 100);
+	nfct_helper_policy_attr_set_u32(p, NFCTH_ATTR_POLICY_MAX, 100);
+
+	nfct_helper_attr_set(nfct_helper, NFCTH_ATTR_POLICY, p);
 
 	seq = time(NULL);
 	nlh = nfct_helper_nlmsg_build_hdr(buf, NFNL_MSG_CTHELPER_NEW,
@@ -40,6 +49,7 @@ int main(int argc, char *argv[])
 	nfct_helper_nlmsg_build_payload(nlh, nfct_helper);
 
 	nfct_helper_free(nfct_helper);
+	nfct_helper_policy_free(p);
 
 	nl = mnl_socket_open(NETLINK_NETFILTER);
 	if (nl == NULL) {
