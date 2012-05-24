@@ -1,3 +1,9 @@
+libnetfilter-cthelper (1.0.1) unstable; urgency=low
+
+  * force release: fix version mismatch
+
+ -- Gaurav Sinha <gaurav.sinha@vyatta.com>  Thu, 24 May 2012 11:50:17 -0700
+
 libnetfilter-cthelper (1.0.0) unstable; urgency=low
 
   * Initial version, debianized version of netfilter libnetfilter_cthelper library 
