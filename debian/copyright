@@ -1,0 +1,15 @@
+This package was debianized by Gaurav Sinha <gaurav.sinha@vyatta.com> on
+Thu, 24 May 2012 15:40:31 -0700
+
+It's original content from the GIT repository
+<git://git.netfilter.org/libnetfilter_cthelper>
+
+Upstream Author: 
+
+    <pablo@netfilter.org>
+
+Copyright: 
+
+    Copyright (C) 2012 Vyatta, Inc.
+    All Rights Reserved.
+

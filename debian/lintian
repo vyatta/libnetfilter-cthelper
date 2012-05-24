@@ -1,0 +1,2 @@
+libnetfilter_cthelper: file-in-unusual-dir
+libnetfilter_cthelper: dir-or-file-in-opt
