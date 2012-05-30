@@ -11,3 +11,5 @@
 
 %:
 	dh $@ 
+build:
+	autoreconf -i
