@@ -1,3 +1,9 @@
+libnetfilter-cthelper (1.0.1-3) unstable; urgency=low
+
+  * clean-up deleted files
+
+ -- Gaurav Sinha <gaurav.sinha@vyatta.com>  Wed, 30 May 2012 11:15:40 -0700
+
 libnetfilter-cthelper (1.0.1-2) unstable; urgency=low
 
   * Fixing shared library build issue.
