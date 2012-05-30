@@ -1,14 +1,15 @@
 Source: libnetfilter-cthelper
-Section: contrib/net
+Section: unknown
 Priority: extra
-Maintainer: Vyatta Package Maintainers <maintainers@vyatta.com>
-Build-Depends: debhelper (>= 5), 
- autotools-dev, 
-Standards-Version: 3.7.2
+Maintainer: root <root@buildmachine2.vyatta.com>
+Build-Depends: debhelper (>= 7.0.50~)
+Standards-Version: 3.8.4
+Homepage: <insert the upstream URL, if relevant>
+#Vcs-Git: git://git.debian.org/collab-maint/libnetfilter-cthelper.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/libnetfilter-cthelper.git;a=summary
 
 Package: libnetfilter-cthelper
 Architecture: any
-Depends:  perl (>= 5.8.8),
- vyatta-bash | bash (>= 3.1),
-Description: The libnetfilter_cthelper package
- This package has the libnetfilter_cthelper netfilter library 
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>
