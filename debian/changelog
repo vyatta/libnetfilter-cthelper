@@ -1,3 +1,9 @@
+libnetfilter-cthelper (1.0.1-4+daisy1) unstable; urgency=low
+
+  * create daisy branch
+
+ -- John Southworth <john.southworth@vyatta.com>  Sat, 13 Oct 2012 13:29:38 -0700
+
 libnetfilter-cthelper (1.0.1-4) unstable; urgency=low
 
   * Add autoreconf
