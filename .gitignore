@@ -5,8 +5,13 @@
 *.so
 *.libs
 *.deps
+*.pc
+*Makefile
 .dirstamp
+config.h
+doxygen.cfg
 libtool
+stamp-h1
 /aclocal.m4
 /autom4te.cache
 /build-stamp
@@ -17,8 +22,9 @@ libtool
 /config.sub
 /configure
 /debian/files
+/debian/*debhelper
 /debian/*debhelper.log
+/debian/libnetfilter-cthelper*
 /debian/vyatta-conntrack-sync
 /INSTALL
 /Makefile.in
-/Makefile
