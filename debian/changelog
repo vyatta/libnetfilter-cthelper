@@ -1,3 +1,10 @@
+libnetfilter-cthelper (1.0.1-5) unstable; urgency=low
+
+  * Update .gitignore with generated files
+  * Add explicit build dependency for libmnl-dev.
+
+ -- Sven-Thorsten Dietrich <sven@vyatta.com>  Mon, 04 Mar 2013 17:00:28 -0800
+
 libnetfilter-cthelper (1.0.1-4) unstable; urgency=low
 
   * Add autoreconf
