@@ -113,11 +113,11 @@ void nfct_helper_free(struct nfct_helper *h)
 {
 	int i;
 
-	free(h);
 	for (i=0; i<NF_CT_HELPER_CLASS_MAX; i++) {
 		if (h->expect_policy[i])
 			free(h->expect_policy[i]);
 	}
+	free(h);
 }
 EXPORT_SYMBOL(nfct_helper_free);
 
